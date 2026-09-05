@@ -2,7 +2,8 @@
 /app/node_modules
 /app/.next
 /.vercel
+/.multica
+/AGENTS.md
 /keys
 .env*
 !.env.example
-
