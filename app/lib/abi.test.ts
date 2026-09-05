@@ -1,0 +1,2 @@
+import {describe,expect,it} from "vitest";import {Keypair} from "@solana/web3.js";import {decodeMarket,marketPda,positionPda,vaultPda} from "./abi";
+describe("ABI",()=>{it("derives deterministic distinct PDAs",()=>{const k=Keypair.generate().publicKey;const [m]=marketPda(k,1n);expect(vaultPda(m)[0].equals(positionPda(m,k)[0])).toBe(false)});it("rejects malformed state",()=>expect(()=>decodeMarket(Buffer.alloc(159))).toThrow())});
